@@ -1,1 +1,32 @@
-<p>table-employee works!</p>
+@if (employees.length === 0) {
+<td>No hay elementos para mostrar.</td>
+}@else {
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Salario</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Salio anual</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employees;">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.salary }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.image }}</td>
+      <td>{{ item.employeeAnnualSalary }}</td>
+      <td>
+        <button type="button" class="btn btn-outline-primary">
+          <i class="bi bi-info-circle fs-4 --bs-emphasis-color"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+}
